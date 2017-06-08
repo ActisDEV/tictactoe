@@ -22,6 +22,7 @@
  * THE SOFTWARE.
  */
 package tictactoe.game;
+import java.awt.*;
 
 /**
  *
@@ -89,6 +90,11 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         dontpressButton.setText("don't press");
+        dontpressButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                dontpressButtonMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -155,8 +161,20 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        Credits credits = new Credits();
+        credits.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void dontpressButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dontpressButtonMouseClicked
+        dontpressButton.setText("OH SHIT!");
+        dontpressButton.setForeground(Color.GREEN);
+        jButton4.setForeground(Color.red);
+        jButton3.setForeground(Color.pink);
+        jButton2.setForeground(Color.blue);
+        jButton1.setForeground(Color.CYAN);
+        mainMenuLabel.setForeground(Color.yellow);
+    }//GEN-LAST:event_dontpressButtonMouseClicked
 
     /**
      * @param args the command line arguments

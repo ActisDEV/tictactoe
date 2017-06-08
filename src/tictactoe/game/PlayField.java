@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 package tictactoe.game;
-
+import java.awt.*;
 /**
  *
  * @author Денис
@@ -241,6 +241,7 @@ public class PlayField extends javax.swing.JFrame {
            switch(playField[0][0]) {
                case 0: 
                    pos00.setText("X");
+                   pos00.setForeground(Color.blue);
                    playField[0][0] = 1;
                    info.setText("Крестики сходили [1:1]. Ход ноликов!");
                    isCross = false;
@@ -297,6 +298,7 @@ public class PlayField extends javax.swing.JFrame {
             switch (playField[0][0]) {
                 case 0:
                     pos00.setText("O");
+                    pos00.setForeground(Color.red);
                     playField[0][0] = 2;
                     info.setText("Нолики сходили [1:1]. Ход крестиков!");
                     isCross = true;
@@ -356,6 +358,7 @@ public class PlayField extends javax.swing.JFrame {
            switch(playField[0][1]) {
                case 0: 
                    pos01.setText("X");
+                   pos01.setForeground(Color.blue);                   
                    playField[0][1] = 1;
                    info.setText("Крестики сходили [1:2]. Ход ноликов!");
                    isCross = false;
@@ -412,6 +415,7 @@ public class PlayField extends javax.swing.JFrame {
             switch (playField[0][1]) {
                 case 0:
                     pos01.setText("O");
+                    pos01.setForeground(Color.red);                    
                     playField[0][1] = 2;
                     info.setText("Нолики сходили [1:2]. Ход крестиков!");
                     isCross = true;
@@ -471,6 +475,7 @@ public class PlayField extends javax.swing.JFrame {
            switch(playField[0][2]) {
                case 0: 
                    pos02.setText("X");
+                   pos02.setForeground(Color.blue);
                    playField[0][2] = 1;
                    info.setText("Крестики сходили [1:3]. Ход ноликов!");
                    isCross = false;
@@ -527,6 +532,7 @@ public class PlayField extends javax.swing.JFrame {
             switch (playField[0][2]) {
                 case 0:
                     pos02.setText("O");
+                    pos02.setForeground(Color.red);                    
                     playField[0][2] = 2;
                     info.setText("Нолики сходили [1:3]. Ход крестиков!");
                     isCross = true;
@@ -586,6 +592,7 @@ public class PlayField extends javax.swing.JFrame {
            switch(playField[1][0]) {
                case 0: 
                    pos10.setText("X");
+                   pos10.setForeground(Color.blue);                   
                    playField[1][0] = 1;
                    info.setText("Крестики сходили [2:1]. Ход ноликов!");
                    isCross = false;
@@ -642,6 +649,7 @@ public class PlayField extends javax.swing.JFrame {
             switch (playField[1][0]) {
                 case 0:
                     pos10.setText("O");
+                    pos10.setForeground(Color.red);                    
                     playField[1][0] = 2;
                     info.setText("Нолики сходили [2:1]. Ход крестиков!");
                     isCross = true;
@@ -701,6 +709,7 @@ public class PlayField extends javax.swing.JFrame {
            switch(playField[1][1]) {
                case 0: 
                    pos11.setText("X");
+                   pos11.setForeground(Color.blue);                   
                    playField[1][1] = 1;
                    info.setText("Крестики сходили [2:2]. Ход ноликов!");
                    isCross = false;
@@ -757,6 +766,7 @@ public class PlayField extends javax.swing.JFrame {
             switch (playField[1][1]) {
                 case 0:
                     pos11.setText("O");
+                    pos11.setForeground(Color.red);
                     playField[1][1] = 2;
                     info.setText("Нолики сходили [2:2]. Ход крестиков!");
                     isCross = true;
@@ -816,6 +826,7 @@ public class PlayField extends javax.swing.JFrame {
            switch(playField[1][2]) {
                case 0: 
                    pos12.setText("X");
+                   pos12.setForeground(Color.blue);                   
                    playField[1][2] = 1;
                    info.setText("Крестики сходили [2:3]. Ход ноликов!");
                    isCross = false;
@@ -872,6 +883,7 @@ public class PlayField extends javax.swing.JFrame {
             switch (playField[1][2]) {
                 case 0:
                     pos12.setText("O");
+                    pos12.setForeground(Color.red);
                     playField[1][2] = 2;
                     info.setText("Нолики сходили [2:3]. Ход крестиков!");
                     isCross = true;
@@ -931,6 +943,7 @@ public class PlayField extends javax.swing.JFrame {
            switch(playField[2][0]) {
                case 0: 
                    pos20.setText("X");
+                   pos20.setForeground(Color.blue);                   
                    playField[2][0] = 1;
                    info.setText("Крестики сходили [3:1]. Ход ноликов!");
                    isCross = false;
@@ -987,6 +1000,7 @@ public class PlayField extends javax.swing.JFrame {
             switch (playField[2][0]) {
                 case 0:
                     pos20.setText("O");
+                    pos20.setForeground(Color.red);                    
                     playField[2][0] = 2;
                     info.setText("Нолики сходили [3:1]. Ход крестиков!");
                     isCross = true;
@@ -1046,6 +1060,7 @@ public class PlayField extends javax.swing.JFrame {
            switch(playField[2][1]) {
                case 0: 
                    pos21.setText("X");
+                   pos21.setForeground(Color.blue);                   
                    playField[2][1] = 1;
                    info.setText("Крестики сходили [3:2]. Ход ноликов!");
                    isCross = false;
@@ -1102,6 +1117,7 @@ public class PlayField extends javax.swing.JFrame {
             switch (playField[2][1]) {
                 case 0:
                     pos21.setText("O");
+                    pos21.setForeground(Color.red);                    
                     playField[2][1] = 2;
                     info.setText("Нолики сходили [3:2]. Ход крестиков!");
                     isCross = true;
@@ -1161,6 +1177,7 @@ public class PlayField extends javax.swing.JFrame {
            switch(playField[2][2]) {
                case 0: 
                    pos22.setText("X");
+                   pos22.setForeground(Color.blue);                   
                    playField[2][2] = 1;
                    info.setText("Крестики сходили [3:3]. Ход ноликов!");
                    isCross = false;
@@ -1217,6 +1234,7 @@ public class PlayField extends javax.swing.JFrame {
             switch (playField[2][2]) {
                 case 0:
                     pos22.setText("O");
+                    pos22.setForeground(Color.red);
                     playField[2][2] = 2;
                     info.setText("Нолики сходили [3:3]. Ход крестиков!");
                     isCross = true;

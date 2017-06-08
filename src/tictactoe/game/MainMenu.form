@@ -157,6 +157,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="don&apos;t press"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="dontpressButtonMouseClicked"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
