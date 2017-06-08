@@ -57,6 +57,7 @@ public class PlayField extends javax.swing.JFrame {
         pos20 = new javax.swing.JTextField();
         pos21 = new javax.swing.JTextField();
         pos22 = new javax.swing.JTextField();
+        info = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -150,13 +151,16 @@ public class PlayField extends javax.swing.JFrame {
             }
         });
 
+        info.setEditable(false);
+        info.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(pos00, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -176,7 +180,8 @@ public class PlayField extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(pos20, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pos12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(pos12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(info))
                 .addContainerGap(88, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -197,18 +202,66 @@ public class PlayField extends javax.swing.JFrame {
                     .addComponent(pos20, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pos21, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pos22, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(info, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void pos00MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pos00MouseClicked
-        pos00.setText("X");
+        if (isCross == true) {
+           switch(playField[0][0]) {
+               case 0: 
+                   pos00.setText("X");
+                   playField[0][0] = 1;
+                   info.setText("Крестики сходили [1:1]. Ход ноликов!");
+                   isCross = false;
+                   break;
+               default: 
+                   info.setText("Невозможно соверишть такой ход!");
+                   break;
+           } 
+        } else {
+            switch (playField[0][0]) {
+                case 0:
+                    pos00.setText("O");
+                    playField[0][0] = 2;
+                    info.setText("Нолики сходили [1:1]. Ход крестиков!");
+                    isCross = true;
+                    break;
+                default:
+                    info.setText("Невозможно совершить такой ход!");
+            }
+        }
     }//GEN-LAST:event_pos00MouseClicked
 
     private void pos01MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pos01MouseClicked
-        pos01.setText("X");
+        if (isCross == true) {
+           switch(playField[0][1]) {
+               case 0: 
+                   pos01.setText("X");
+                   playField[0][1] = 1;
+                   info.setText("Крестики сходили [1:2]. Ход ноликов!");
+                   isCross = false;
+                   break;
+               default: 
+                   info.setText("Невозможно соверишть такой ход!");
+                   break;
+           } 
+        } else {
+            switch (playField[0][1]) {
+                case 0:
+                    pos01.setText("O");
+                    playField[0][1] = 2;
+                    info.setText("Нолики сходили [1:2]. Ход крестиков!");
+                    isCross = true;
+                    break;
+                default:
+                    info.setText("Невозможно совершить такой ход!");
+            }
+        }
     }//GEN-LAST:event_pos01MouseClicked
 
     private void pos02MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pos02MouseClicked
@@ -275,6 +328,7 @@ public class PlayField extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField info;
     private javax.swing.JTextField pos00;
     private javax.swing.JTextField pos01;
     private javax.swing.JTextField pos02;
