@@ -32,6 +32,7 @@ public class PlayField extends javax.swing.JFrame {
     int[][] playField; //игровое поле, восприяте компьютера
     boolean isCross = true; //крестики ходят первыми
     int i; //для очистки переменных
+    MainMenu menu = new MainMenu();
     /**
      * Creates new form PlayField
      */
@@ -1293,7 +1294,8 @@ public class PlayField extends javax.swing.JFrame {
     }//GEN-LAST:event_clearButtonActionPerformed
 
     private void closeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeButtonActionPerformed
-        System.exit(0);
+        menu.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_closeButtonActionPerformed
 
     /**
