@@ -237,7 +237,7 @@ public class PlayField extends javax.swing.JFrame {
                    ||
                ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 1))
                    ||
-               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[1][2]) && (playField[0][0] == 1))//диагонали    
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 1))//диагонали    
                    ||
                ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 1))    
                ) {
@@ -256,7 +256,7 @@ public class PlayField extends javax.swing.JFrame {
                    ||
                ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 2))
                    ||
-               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[1][2]) && (playField[0][0] == 2))//диагонали    
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 2))//диагонали    
                    ||
                ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 2))  
                ) {
@@ -337,7 +337,51 @@ public class PlayField extends javax.swing.JFrame {
                default: 
                    info.setText("Невозможно соверишть такой ход!");
                    break;
-           } 
+           }
+                      
+           if ( //условия победы КРЕСТИКОВ
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 1))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 1))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 1))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 1))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 1))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 1))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 1))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 1))    
+               ) {
+                    info.setText("Крестики побеждают!");
+           } else if 
+               (
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 2))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 2))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 2))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 2))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 2))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 2))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 2))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 2))  
+               ) {
+                   info.setText("Нолики побеждают!");
+           } else if
+               ((playField[0][0] != 0) && (playField[0][1] != 0) && (playField[0][2] != 0) && (playField[1][0] != 0) && (playField[1][1] != 0) && 
+                   (playField[1][2] != 0) && (playField[2][0] != 0) && (playField[2][1] != 0) && (playField[2][2] != 0)) {
+                   info.setText("Ничья!");
+           }
+           
         } else {
             switch (playField[0][1]) {
                 case 0:
@@ -349,6 +393,50 @@ public class PlayField extends javax.swing.JFrame {
                 default:
                     info.setText("Невозможно совершить такой ход!");
             }
+                       
+           if ( //условия победы КРЕСТИКОВ
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 1))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 1))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 1))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 1))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 1))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 1))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[1][2]) && (playField[0][0] == 1))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 1))    
+               ) {
+                    info.setText("Крестики побеждают!");
+           } else if 
+               (
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 2))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 2))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 2))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 2))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 2))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 2))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[1][2]) && (playField[0][0] == 2))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 2))  
+               ) {
+                   info.setText("Нолики побеждают!");
+           } else if
+               ((playField[0][0] != 0) && (playField[0][1] != 0) && (playField[0][2] != 0) && (playField[1][0] != 0) && (playField[1][1] != 0) && 
+                   (playField[1][2] != 0) && (playField[2][0] != 0) && (playField[2][1] != 0) && (playField[2][2] != 0)) {
+                   info.setText("Ничья!");
+           }
+           
         }
     }//GEN-LAST:event_pos01MouseClicked
 
@@ -364,7 +452,51 @@ public class PlayField extends javax.swing.JFrame {
                default: 
                    info.setText("Невозможно соверишть такой ход!");
                    break;
-           } 
+           }
+                      
+           if ( //условия победы КРЕСТИКОВ
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 1))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 1))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 1))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 1))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 1))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 1))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 1))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 1))    
+               ) {
+                    info.setText("Крестики побеждают!");
+           } else if 
+               (
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 2))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 2))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 2))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 2))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 2))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 2))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 2))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 2))  
+               ) {
+                   info.setText("Нолики побеждают!");
+           } else if
+               ((playField[0][0] != 0) && (playField[0][1] != 0) && (playField[0][2] != 0) && (playField[1][0] != 0) && (playField[1][1] != 0) && 
+                   (playField[1][2] != 0) && (playField[2][0] != 0) && (playField[2][1] != 0) && (playField[2][2] != 0)) {
+                   info.setText("Ничья!");
+           }
+           
         } else {
             switch (playField[0][2]) {
                 case 0:
@@ -376,6 +508,50 @@ public class PlayField extends javax.swing.JFrame {
                 default:
                     info.setText("Невозможно совершить такой ход!");
             }
+                       
+           if ( //условия победы КРЕСТИКОВ
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 1))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 1))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 1))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 1))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 1))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 1))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 1))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 1))    
+               ) {
+                    info.setText("Крестики побеждают!");
+           } else if 
+               (
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 2))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 2))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 2))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 2))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 2))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 2))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 2))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 2))  
+               ) {
+                   info.setText("Нолики побеждают!");
+           } else if
+               ((playField[0][0] != 0) && (playField[0][1] != 0) && (playField[0][2] != 0) && (playField[1][0] != 0) && (playField[1][1] != 0) && 
+                   (playField[1][2] != 0) && (playField[2][0] != 0) && (playField[2][1] != 0) && (playField[2][2] != 0)) {
+                   info.setText("Ничья!");
+           }
+           
         }
     }//GEN-LAST:event_pos02MouseClicked
 
@@ -391,7 +567,51 @@ public class PlayField extends javax.swing.JFrame {
                default: 
                    info.setText("Невозможно соверишть такой ход!");
                    break;
-           } 
+           }
+                      
+           if ( //условия победы КРЕСТИКОВ
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 1))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 1))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 1))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 1))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 1))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 1))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 1))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 1))    
+               ) {
+                    info.setText("Крестики побеждают!");
+           } else if 
+               (
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 2))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 2))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 2))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 2))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 2))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 2))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 2))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 2))  
+               ) {
+                   info.setText("Нолики побеждают!");
+           } else if
+               ((playField[0][0] != 0) && (playField[0][1] != 0) && (playField[0][2] != 0) && (playField[1][0] != 0) && (playField[1][1] != 0) && 
+                   (playField[1][2] != 0) && (playField[2][0] != 0) && (playField[2][1] != 0) && (playField[2][2] != 0)) {
+                   info.setText("Ничья!");
+           }
+           
         } else {
             switch (playField[1][0]) {
                 case 0:
@@ -403,6 +623,50 @@ public class PlayField extends javax.swing.JFrame {
                 default:
                     info.setText("Невозможно совершить такой ход!");
             }
+                       
+           if ( //условия победы КРЕСТИКОВ
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 1))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 1))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 1))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 1))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 1))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 1))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 1))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 1))    
+               ) {
+                    info.setText("Крестики побеждают!");
+           } else if 
+               (
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 2))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 2))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 2))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 2))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 2))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 2))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 2))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 2))  
+               ) {
+                   info.setText("Нолики побеждают!");
+           } else if
+               ((playField[0][0] != 0) && (playField[0][1] != 0) && (playField[0][2] != 0) && (playField[1][0] != 0) && (playField[1][1] != 0) && 
+                   (playField[1][2] != 0) && (playField[2][0] != 0) && (playField[2][1] != 0) && (playField[2][2] != 0)) {
+                   info.setText("Ничья!");
+           }
+           
         }
     }//GEN-LAST:event_pos10MouseClicked
 
@@ -418,7 +682,51 @@ public class PlayField extends javax.swing.JFrame {
                default: 
                    info.setText("Невозможно соверишть такой ход!");
                    break;
-           } 
+           }
+                      
+           if ( //условия победы КРЕСТИКОВ
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 1))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 1))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 1))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 1))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 1))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 1))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 1))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 1))    
+               ) {
+                    info.setText("Крестики побеждают!");
+           } else if 
+               (
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 2))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 2))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 2))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 2))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 2))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 2))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 2))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 2))  
+               ) {
+                   info.setText("Нолики побеждают!");
+           } else if
+               ((playField[0][0] != 0) && (playField[0][1] != 0) && (playField[0][2] != 0) && (playField[1][0] != 0) && (playField[1][1] != 0) && 
+                   (playField[1][2] != 0) && (playField[2][0] != 0) && (playField[2][1] != 0) && (playField[2][2] != 0)) {
+                   info.setText("Ничья!");
+           }
+           
         } else {
             switch (playField[1][1]) {
                 case 0:
@@ -430,6 +738,50 @@ public class PlayField extends javax.swing.JFrame {
                 default:
                     info.setText("Невозможно совершить такой ход!");
             }
+                       
+           if ( //условия победы КРЕСТИКОВ
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 1))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 1))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 1))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 1))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 1))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 1))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 1))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 1))    
+               ) {
+                    info.setText("Крестики побеждают!");
+           } else if 
+               (
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 2))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 2))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 2))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 2))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 2))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 2))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 2))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 2))  
+               ) {
+                   info.setText("Нолики побеждают!");
+           } else if
+               ((playField[0][0] != 0) && (playField[0][1] != 0) && (playField[0][2] != 0) && (playField[1][0] != 0) && (playField[1][1] != 0) && 
+                   (playField[1][2] != 0) && (playField[2][0] != 0) && (playField[2][1] != 0) && (playField[2][2] != 0)) {
+                   info.setText("Ничья!");
+           }
+           
         }
     }//GEN-LAST:event_pos11MouseClicked
 
@@ -445,7 +797,51 @@ public class PlayField extends javax.swing.JFrame {
                default: 
                    info.setText("Невозможно соверишть такой ход!");
                    break;
-           } 
+           }
+                      
+           if ( //условия победы КРЕСТИКОВ
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 1))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 1))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 1))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 1))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 1))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 1))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 1))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 1))    
+               ) {
+                    info.setText("Крестики побеждают!");
+           } else if 
+               (
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 2))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 2))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 2))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 2))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 2))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 2))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 2))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 2))  
+               ) {
+                   info.setText("Нолики побеждают!");
+           } else if
+               ((playField[0][0] != 0) && (playField[0][1] != 0) && (playField[0][2] != 0) && (playField[1][0] != 0) && (playField[1][1] != 0) && 
+                   (playField[1][2] != 0) && (playField[2][0] != 0) && (playField[2][1] != 0) && (playField[2][2] != 0)) {
+                   info.setText("Ничья!");
+           }
+           
         } else {
             switch (playField[1][2]) {
                 case 0:
@@ -457,6 +853,50 @@ public class PlayField extends javax.swing.JFrame {
                 default:
                     info.setText("Невозможно совершить такой ход!");
             }
+                       
+           if ( //условия победы КРЕСТИКОВ
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 1))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 1))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 1))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 1))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 1))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 1))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 1))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 1))    
+               ) {
+                    info.setText("Крестики побеждают!");
+           } else if 
+               (
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 2))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 2))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 2))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 2))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 2))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 2))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 2))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 2))  
+               ) {
+                   info.setText("Нолики побеждают!");
+           } else if
+               ((playField[0][0] != 0) && (playField[0][1] != 0) && (playField[0][2] != 0) && (playField[1][0] != 0) && (playField[1][1] != 0) && 
+                   (playField[1][2] != 0) && (playField[2][0] != 0) && (playField[2][1] != 0) && (playField[2][2] != 0)) {
+                   info.setText("Ничья!");
+           }
+           
         }
     }//GEN-LAST:event_pos12MouseClicked
 
@@ -472,7 +912,51 @@ public class PlayField extends javax.swing.JFrame {
                default: 
                    info.setText("Невозможно соверишть такой ход!");
                    break;
-           } 
+           }
+                      
+           if ( //условия победы КРЕСТИКОВ
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 1))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 1))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 1))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 1))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 1))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 1))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 1))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 1))    
+               ) {
+                    info.setText("Крестики побеждают!");
+           } else if 
+               (
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 2))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 2))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 2))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 2))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 2))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 2))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 2))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 2))  
+               ) {
+                   info.setText("Нолики побеждают!");
+           } else if
+               ((playField[0][0] != 0) && (playField[0][1] != 0) && (playField[0][2] != 0) && (playField[1][0] != 0) && (playField[1][1] != 0) && 
+                   (playField[1][2] != 0) && (playField[2][0] != 0) && (playField[2][1] != 0) && (playField[2][2] != 0)) {
+                   info.setText("Ничья!");
+           }
+           
         } else {
             switch (playField[2][0]) {
                 case 0:
@@ -484,6 +968,50 @@ public class PlayField extends javax.swing.JFrame {
                 default:
                     info.setText("Невозможно совершить такой ход!");
             }
+                       
+           if ( //условия победы КРЕСТИКОВ
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 1))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 1))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 1))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 1))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 1))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 1))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 1))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 1))    
+               ) {
+                    info.setText("Крестики побеждают!");
+           } else if 
+               (
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 2))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 2))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 2))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 2))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 2))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 2))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 2))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 2))  
+               ) {
+                   info.setText("Нолики побеждают!");
+           } else if
+               ((playField[0][0] != 0) && (playField[0][1] != 0) && (playField[0][2] != 0) && (playField[1][0] != 0) && (playField[1][1] != 0) && 
+                   (playField[1][2] != 0) && (playField[2][0] != 0) && (playField[2][1] != 0) && (playField[2][2] != 0)) {
+                   info.setText("Ничья!");
+           }
+           
         }
     }//GEN-LAST:event_pos20MouseClicked
 
@@ -500,6 +1028,50 @@ public class PlayField extends javax.swing.JFrame {
                    info.setText("Невозможно соверишть такой ход!");
                    break;
            } 
+                      
+           if ( //условия победы КРЕСТИКОВ
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 1))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 1))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 1))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 1))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 1))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 1))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 1))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 1))    
+               ) {
+                    info.setText("Крестики побеждают!");
+           } else if 
+               (
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 2))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 2))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 2))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 2))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 2))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 2))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 2))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 2))  
+               ) {
+                   info.setText("Нолики побеждают!");
+           } else if
+               ((playField[0][0] != 0) && (playField[0][1] != 0) && (playField[0][2] != 0) && (playField[1][0] != 0) && (playField[1][1] != 0) && 
+                   (playField[1][2] != 0) && (playField[2][0] != 0) && (playField[2][1] != 0) && (playField[2][2] != 0)) {
+                   info.setText("Ничья!");
+           }
+           
         } else {
             switch (playField[2][1]) {
                 case 0:
@@ -511,6 +1083,50 @@ public class PlayField extends javax.swing.JFrame {
                 default:
                     info.setText("Невозможно совершить такой ход!");
             }
+                       
+           if ( //условия победы КРЕСТИКОВ
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 1))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 1))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 1))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 1))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 1))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 1))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 1))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 1))    
+               ) {
+                    info.setText("Крестики побеждают!");
+           } else if 
+               (
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 2))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 2))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 2))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 2))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 2))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 2))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 2))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 2))  
+               ) {
+                   info.setText("Нолики побеждают!");
+           } else if
+               ((playField[0][0] != 0) && (playField[0][1] != 0) && (playField[0][2] != 0) && (playField[1][0] != 0) && (playField[1][1] != 0) && 
+                   (playField[1][2] != 0) && (playField[2][0] != 0) && (playField[2][1] != 0) && (playField[2][2] != 0)) {
+                   info.setText("Ничья!");
+           }
+           
         }
     }//GEN-LAST:event_pos21MouseClicked
 
@@ -526,7 +1142,51 @@ public class PlayField extends javax.swing.JFrame {
                default: 
                    info.setText("Невозможно соверишть такой ход!");
                    break;
-           } 
+           }
+                      
+           if ( //условия победы КРЕСТИКОВ
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 1))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 1))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 1))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 1))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 1))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 1))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 1))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 1))    
+               ) {
+                    info.setText("Крестики побеждают!");
+           } else if 
+               (
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 2))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 2))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 2))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 2))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 2))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 2))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[2][2]) && (playField[0][0] == 2))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 2))  
+               ) {
+                   info.setText("Нолики побеждают!");
+           } else if
+               ((playField[0][0] != 0) && (playField[0][1] != 0) && (playField[0][2] != 0) && (playField[1][0] != 0) && (playField[1][1] != 0) && 
+                   (playField[1][2] != 0) && (playField[2][0] != 0) && (playField[2][1] != 0) && (playField[2][2] != 0)) {
+                   info.setText("Ничья!");
+           }
+           
         } else {
             switch (playField[2][2]) {
                 case 0:
@@ -538,6 +1198,50 @@ public class PlayField extends javax.swing.JFrame {
                 default:
                     info.setText("Невозможно совершить такой ход!");
             }
+                       
+           if ( //условия победы КРЕСТИКОВ
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 1))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 1))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 1))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 1))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 1))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 1))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[1][2]) && (playField[0][0] == 1))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 1))    
+               ) {
+                    info.setText("Крестики побеждают!");
+           } else if 
+               (
+               ((playField[0][0] == playField[0][1]) && (playField[0][0] == playField[0][2]) && (playField[0][0] == 2))//горизонтали
+                   ||
+               ((playField[1][0] == playField[1][1]) && (playField[1][0] == playField[1][2]) && (playField[1][0] == 2))
+                   ||
+               ((playField[2][0] == playField[2][1]) && (playField[2][0] == playField[2][2]) && (playField[2][0] == 2))
+                   ||
+               ((playField[0][0] == playField[1][0]) && (playField[0][0] == playField[2][0]) && (playField[0][0] == 2))//вертикали   
+                   ||
+               ((playField[0][1] == playField[1][1]) && (playField[0][1] == playField[2][1]) && (playField[0][1] == 2))    
+                   ||
+               ((playField[0][2] == playField[1][2]) && (playField[0][2] == playField[2][2]) && (playField[0][2] == 2))
+                   ||
+               ((playField[0][0] == playField[1][1]) && (playField[0][0] == playField[1][2]) && (playField[0][0] == 2))//диагонали    
+                   ||
+               ((playField[0][2] == playField[1][1]) && (playField[0][2] == playField[2][0]) && (playField[0][2] == 2))  
+               ) {
+                   info.setText("Нолики побеждают!");
+           } else if
+               ((playField[0][0] != 0) && (playField[0][1] != 0) && (playField[0][2] != 0) && (playField[1][0] != 0) && (playField[1][1] != 0) && 
+                   (playField[1][2] != 0) && (playField[2][0] != 0) && (playField[2][1] != 0) && (playField[2][2] != 0)) {
+                   info.setText("Ничья!");
+           }
+           
         }
     }//GEN-LAST:event_pos22MouseClicked
 
