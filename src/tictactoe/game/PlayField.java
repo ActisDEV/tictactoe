@@ -29,10 +29,13 @@ package tictactoe.game;
  */
 public class PlayField extends javax.swing.JFrame {
 
+    int[][] playField; //игровое поле, восприяте компьютера
+    boolean isCross = true; //крестики ходят первыми
     /**
      * Creates new form PlayField
      */
     public PlayField() {
+        playField = new int[3][3];
         initComponents();
     }
 
@@ -45,21 +48,196 @@ public class PlayField extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pos00 = new javax.swing.JTextField();
+        pos01 = new javax.swing.JTextField();
+        pos02 = new javax.swing.JTextField();
+        pos10 = new javax.swing.JTextField();
+        pos11 = new javax.swing.JTextField();
+        pos12 = new javax.swing.JTextField();
+        pos20 = new javax.swing.JTextField();
+        pos21 = new javax.swing.JTextField();
+        pos22 = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        pos00.setEditable(false);
+        pos00.setFont(new java.awt.Font("Tahoma", 1, 100)); // NOI18N
+        pos00.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        pos00.setToolTipText("");
+        pos00.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pos00MouseClicked(evt);
+            }
+        });
+
+        pos01.setEditable(false);
+        pos01.setFont(new java.awt.Font("Tahoma", 1, 100)); // NOI18N
+        pos01.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        pos01.setToolTipText("");
+        pos01.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pos01MouseClicked(evt);
+            }
+        });
+
+        pos02.setEditable(false);
+        pos02.setFont(new java.awt.Font("Tahoma", 1, 100)); // NOI18N
+        pos02.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        pos02.setToolTipText("");
+        pos02.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pos02MouseClicked(evt);
+            }
+        });
+
+        pos10.setEditable(false);
+        pos10.setFont(new java.awt.Font("Tahoma", 1, 100)); // NOI18N
+        pos10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        pos10.setToolTipText("");
+        pos10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pos10MouseClicked(evt);
+            }
+        });
+
+        pos11.setEditable(false);
+        pos11.setFont(new java.awt.Font("Tahoma", 1, 100)); // NOI18N
+        pos11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        pos11.setToolTipText("");
+        pos11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pos11MouseClicked(evt);
+            }
+        });
+
+        pos12.setEditable(false);
+        pos12.setFont(new java.awt.Font("Tahoma", 1, 100)); // NOI18N
+        pos12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        pos12.setToolTipText("");
+        pos12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pos12MouseClicked(evt);
+            }
+        });
+
+        pos20.setEditable(false);
+        pos20.setFont(new java.awt.Font("Tahoma", 1, 100)); // NOI18N
+        pos20.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        pos20.setToolTipText("");
+        pos20.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pos20MouseClicked(evt);
+            }
+        });
+
+        pos21.setEditable(false);
+        pos21.setFont(new java.awt.Font("Tahoma", 1, 100)); // NOI18N
+        pos21.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        pos21.setToolTipText("");
+        pos21.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pos21MouseClicked(evt);
+            }
+        });
+
+        pos22.setEditable(false);
+        pos22.setFont(new java.awt.Font("Tahoma", 1, 100)); // NOI18N
+        pos22.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        pos22.setToolTipText("");
+        pos22.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pos22MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(pos00, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pos01, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pos02, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(pos10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(pos11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(pos22, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(pos21, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pos20, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pos12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pos00, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pos01, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pos02, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pos10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pos11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pos12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pos20, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pos21, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pos22, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void pos00MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pos00MouseClicked
+        pos00.setText("X");
+    }//GEN-LAST:event_pos00MouseClicked
+
+    private void pos01MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pos01MouseClicked
+        pos01.setText("X");
+    }//GEN-LAST:event_pos01MouseClicked
+
+    private void pos02MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pos02MouseClicked
+        pos02.setText("X");
+    }//GEN-LAST:event_pos02MouseClicked
+
+    private void pos10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pos10MouseClicked
+        pos10.setText("X");
+    }//GEN-LAST:event_pos10MouseClicked
+
+    private void pos11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pos11MouseClicked
+        pos11.setText("X");
+    }//GEN-LAST:event_pos11MouseClicked
+
+    private void pos12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pos12MouseClicked
+        pos12.setText("X");
+    }//GEN-LAST:event_pos12MouseClicked
+//НИЖЕ POS22, А НЕ POS20!!!
+    private void pos22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pos22MouseClicked
+        pos22.setText("X");
+    }//GEN-LAST:event_pos22MouseClicked
+
+    private void pos21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pos21MouseClicked
+        pos21.setText("X");
+    }//GEN-LAST:event_pos21MouseClicked
+//НИЖЕ POS20, А НЕ POS22!!!
+    private void pos20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pos20MouseClicked
+        pos20.setText("X");
+    }//GEN-LAST:event_pos20MouseClicked
 
     /**
      * @param args the command line arguments
@@ -97,5 +275,14 @@ public class PlayField extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField pos00;
+    private javax.swing.JTextField pos01;
+    private javax.swing.JTextField pos02;
+    private javax.swing.JTextField pos10;
+    private javax.swing.JTextField pos11;
+    private javax.swing.JTextField pos12;
+    private javax.swing.JTextField pos20;
+    private javax.swing.JTextField pos21;
+    private javax.swing.JTextField pos22;
     // End of variables declaration//GEN-END:variables
 }
