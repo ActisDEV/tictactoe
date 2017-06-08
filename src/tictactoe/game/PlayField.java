@@ -31,6 +31,7 @@ public class PlayField extends javax.swing.JFrame {
 
     int[][] playField; //игровое поле, восприяте компьютера
     boolean isCross = true; //крестики ходят первыми
+    int i; //для очистки переменных
     /**
      * Creates new form PlayField
      */
@@ -58,6 +59,8 @@ public class PlayField extends javax.swing.JFrame {
         pos21 = new javax.swing.JTextField();
         pos22 = new javax.swing.JTextField();
         info = new javax.swing.JTextField();
+        clearButton = new javax.swing.JButton();
+        closeButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -154,6 +157,20 @@ public class PlayField extends javax.swing.JFrame {
         info.setEditable(false);
         info.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
 
+        clearButton.setText("Очистить");
+        clearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearButtonActionPerformed(evt);
+            }
+        });
+
+        closeButton.setText("Выйти");
+        closeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                closeButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -181,7 +198,11 @@ public class PlayField extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(pos22, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(pos12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(info))
+                    .addComponent(info)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(closeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -204,7 +225,11 @@ public class PlayField extends javax.swing.JFrame {
                     .addComponent(pos20, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(info, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clearButton)
+                    .addComponent(closeButton))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
@@ -1245,6 +1270,32 @@ public class PlayField extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_pos22MouseClicked
 
+    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
+        pos00.setText("");
+        pos01.setText("");
+        pos02.setText("");
+        pos10.setText("");
+        pos11.setText("");
+        pos12.setText("");
+        pos20.setText("");
+        pos21.setText("");
+        pos22.setText("");
+        playField[0][0] = 0;
+        playField[0][1] = 0;
+        playField[0][2] = 0;
+        playField[1][0] = 0;
+        playField[1][1] = 0;
+        playField[1][2] = 0;
+        playField[2][0] = 0;
+        playField[2][1] = 0;
+        playField[2][2] = 0;
+        info.setText("");
+    }//GEN-LAST:event_clearButtonActionPerformed
+
+    private void closeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeButtonActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_closeButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1281,6 +1332,8 @@ public class PlayField extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton clearButton;
+    private javax.swing.JButton closeButton;
     private javax.swing.JTextField info;
     private javax.swing.JTextField pos00;
     private javax.swing.JTextField pos01;
