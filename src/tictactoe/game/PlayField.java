@@ -192,15 +192,11 @@ public class PlayField extends javax.swing.JFrame {
         if (isCross == true && playField[0][0] == 0) {
             jTextField1.setText("X");
             isCross = false;
-            log_in_game.setText("Крестики ходят [1;1]. Ход ноликов!");
+            log_in_game.setText("Крестики ходят [1:1]. Ход ноликов!");
         } else if (isCross = false && playField[0][0] == 0) {
             jTextField1.setText("O");
             isCross = true;
-            log_in_game.setText("Нолики ходят [1;1]. Ход крестиков!");
-        } else if (isCross == true && playField[0][0] != 0) {
-            log_in_game.setText("Крестики, невозможно выполнить ход!");
-        } else if (isCross == false && playField[0][0] != 0) {
-            log_in_game.setText("Нолики, невозможно выполнить ход!");
+            log_in_game.setText("Нолики ходят [1:1]. Ход крестиков!");
         }
     }//GEN-LAST:event_jTextField1MouseClicked
 
