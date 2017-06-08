@@ -174,12 +174,12 @@ public class PlayField extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(pos11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(pos22, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(pos20, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(pos21, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pos20, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pos22, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(pos12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(info))
                 .addContainerGap(88, Short.MAX_VALUE))
@@ -199,9 +199,9 @@ public class PlayField extends javax.swing.JFrame {
                     .addComponent(pos12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pos20, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pos22, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pos21, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pos22, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pos20, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(info, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(57, Short.MAX_VALUE))
@@ -265,32 +265,193 @@ public class PlayField extends javax.swing.JFrame {
     }//GEN-LAST:event_pos01MouseClicked
 
     private void pos02MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pos02MouseClicked
-        pos02.setText("X");
+        if (isCross == true) {
+           switch(playField[0][2]) {
+               case 0: 
+                   pos02.setText("X");
+                   playField[0][2] = 1;
+                   info.setText("Крестики сходили [1:3]. Ход ноликов!");
+                   isCross = false;
+                   break;
+               default: 
+                   info.setText("Невозможно соверишть такой ход!");
+                   break;
+           } 
+        } else {
+            switch (playField[0][2]) {
+                case 0:
+                    pos02.setText("O");
+                    playField[0][2] = 2;
+                    info.setText("Нолики сходили [1:3]. Ход крестиков!");
+                    isCross = true;
+                    break;
+                default:
+                    info.setText("Невозможно совершить такой ход!");
+            }
+        }
     }//GEN-LAST:event_pos02MouseClicked
 
     private void pos10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pos10MouseClicked
-        pos10.setText("X");
+       if (isCross == true) {
+           switch(playField[1][0]) {
+               case 0: 
+                   pos10.setText("X");
+                   playField[1][0] = 1;
+                   info.setText("Крестики сходили [2:1]. Ход ноликов!");
+                   isCross = false;
+                   break;
+               default: 
+                   info.setText("Невозможно соверишть такой ход!");
+                   break;
+           } 
+        } else {
+            switch (playField[1][0]) {
+                case 0:
+                    pos10.setText("O");
+                    playField[1][0] = 2;
+                    info.setText("Нолики сходили [2:1]. Ход крестиков!");
+                    isCross = true;
+                    break;
+                default:
+                    info.setText("Невозможно совершить такой ход!");
+            }
+        }
     }//GEN-LAST:event_pos10MouseClicked
 
     private void pos11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pos11MouseClicked
-        pos11.setText("X");
+       if (isCross == true) {
+           switch(playField[1][1]) {
+               case 0: 
+                   pos11.setText("X");
+                   playField[1][1] = 1;
+                   info.setText("Крестики сходили [2:2]. Ход ноликов!");
+                   isCross = false;
+                   break;
+               default: 
+                   info.setText("Невозможно соверишть такой ход!");
+                   break;
+           } 
+        } else {
+            switch (playField[1][1]) {
+                case 0:
+                    pos11.setText("O");
+                    playField[1][1] = 2;
+                    info.setText("Нолики сходили [2:2]. Ход крестиков!");
+                    isCross = true;
+                    break;
+                default:
+                    info.setText("Невозможно совершить такой ход!");
+            }
+        }
     }//GEN-LAST:event_pos11MouseClicked
 
     private void pos12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pos12MouseClicked
-        pos12.setText("X");
+       if (isCross == true) {
+           switch(playField[1][2]) {
+               case 0: 
+                   pos12.setText("X");
+                   playField[1][2] = 1;
+                   info.setText("Крестики сходили [2:3]. Ход ноликов!");
+                   isCross = false;
+                   break;
+               default: 
+                   info.setText("Невозможно соверишть такой ход!");
+                   break;
+           } 
+        } else {
+            switch (playField[1][2]) {
+                case 0:
+                    pos12.setText("O");
+                    playField[1][2] = 2;
+                    info.setText("Нолики сходили [2:3]. Ход крестиков!");
+                    isCross = true;
+                    break;
+                default:
+                    info.setText("Невозможно совершить такой ход!");
+            }
+        }
     }//GEN-LAST:event_pos12MouseClicked
-//НИЖЕ POS22, А НЕ POS20!!!
-    private void pos22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pos22MouseClicked
-        pos22.setText("X");
-    }//GEN-LAST:event_pos22MouseClicked
+
+    private void pos20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pos20MouseClicked
+       if (isCross == true) {
+           switch(playField[2][0]) {
+               case 0: 
+                   pos20.setText("X");
+                   playField[2][0] = 1;
+                   info.setText("Крестики сходили [3:1]. Ход ноликов!");
+                   isCross = false;
+                   break;
+               default: 
+                   info.setText("Невозможно соверишть такой ход!");
+                   break;
+           } 
+        } else {
+            switch (playField[2][0]) {
+                case 0:
+                    pos20.setText("O");
+                    playField[2][0] = 2;
+                    info.setText("Нолики сходили [3:1]. Ход крестиков!");
+                    isCross = true;
+                    break;
+                default:
+                    info.setText("Невозможно совершить такой ход!");
+            }
+        }
+    }//GEN-LAST:event_pos20MouseClicked
 
     private void pos21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pos21MouseClicked
-        pos21.setText("X");
+       if (isCross == true) {
+           switch(playField[2][1]) {
+               case 0: 
+                   pos21.setText("X");
+                   playField[2][1] = 1;
+                   info.setText("Крестики сходили [3:2]. Ход ноликов!");
+                   isCross = false;
+                   break;
+               default: 
+                   info.setText("Невозможно соверишть такой ход!");
+                   break;
+           } 
+        } else {
+            switch (playField[2][1]) {
+                case 0:
+                    pos21.setText("O");
+                    playField[2][1] = 2;
+                    info.setText("Нолики сходили [3:2]. Ход крестиков!");
+                    isCross = true;
+                    break;
+                default:
+                    info.setText("Невозможно совершить такой ход!");
+            }
+        }
     }//GEN-LAST:event_pos21MouseClicked
-//НИЖЕ POS20, А НЕ POS22!!!
-    private void pos20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pos20MouseClicked
-        pos20.setText("X");
-    }//GEN-LAST:event_pos20MouseClicked
+
+    private void pos22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pos22MouseClicked
+       if (isCross == true) {
+           switch(playField[2][2]) {
+               case 0: 
+                   pos22.setText("X");
+                   playField[2][2] = 1;
+                   info.setText("Крестики сходили [3:3]. Ход ноликов!");
+                   isCross = false;
+                   break;
+               default: 
+                   info.setText("Невозможно соверишть такой ход!");
+                   break;
+           } 
+        } else {
+            switch (playField[2][2]) {
+                case 0:
+                    pos22.setText("O");
+                    playField[2][2] = 2;
+                    info.setText("Нолики сходили [3:3]. Ход крестиков!");
+                    isCross = true;
+                    break;
+                default:
+                    info.setText("Невозможно совершить такой ход!");
+            }
+        }
+    }//GEN-LAST:event_pos22MouseClicked
 
     /**
      * @param args the command line arguments
