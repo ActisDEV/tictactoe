@@ -68,7 +68,7 @@ public class PlayField extends javax.swing.JFrame {
         pos00.setEditable(false);
         pos00.setFont(new java.awt.Font("Tahoma", 1, 100)); // NOI18N
         pos00.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        pos00.setToolTipText("");
+        pos00.setToolTipText("1:1");
         pos00.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pos00MouseClicked(evt);
@@ -78,7 +78,7 @@ public class PlayField extends javax.swing.JFrame {
         pos01.setEditable(false);
         pos01.setFont(new java.awt.Font("Tahoma", 1, 100)); // NOI18N
         pos01.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        pos01.setToolTipText("");
+        pos01.setToolTipText("1:2");
         pos01.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pos01MouseClicked(evt);
@@ -88,7 +88,7 @@ public class PlayField extends javax.swing.JFrame {
         pos02.setEditable(false);
         pos02.setFont(new java.awt.Font("Tahoma", 1, 100)); // NOI18N
         pos02.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        pos02.setToolTipText("");
+        pos02.setToolTipText("1:3");
         pos02.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pos02MouseClicked(evt);
@@ -98,7 +98,7 @@ public class PlayField extends javax.swing.JFrame {
         pos10.setEditable(false);
         pos10.setFont(new java.awt.Font("Tahoma", 1, 100)); // NOI18N
         pos10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        pos10.setToolTipText("");
+        pos10.setToolTipText("2:1");
         pos10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pos10MouseClicked(evt);
@@ -108,7 +108,7 @@ public class PlayField extends javax.swing.JFrame {
         pos11.setEditable(false);
         pos11.setFont(new java.awt.Font("Tahoma", 1, 100)); // NOI18N
         pos11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        pos11.setToolTipText("");
+        pos11.setToolTipText("2:2");
         pos11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pos11MouseClicked(evt);
@@ -118,7 +118,7 @@ public class PlayField extends javax.swing.JFrame {
         pos12.setEditable(false);
         pos12.setFont(new java.awt.Font("Tahoma", 1, 100)); // NOI18N
         pos12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        pos12.setToolTipText("");
+        pos12.setToolTipText("2:3");
         pos12.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pos12MouseClicked(evt);
@@ -128,7 +128,7 @@ public class PlayField extends javax.swing.JFrame {
         pos20.setEditable(false);
         pos20.setFont(new java.awt.Font("Tahoma", 1, 100)); // NOI18N
         pos20.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        pos20.setToolTipText("");
+        pos20.setToolTipText("3:1");
         pos20.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pos20MouseClicked(evt);
@@ -138,7 +138,7 @@ public class PlayField extends javax.swing.JFrame {
         pos21.setEditable(false);
         pos21.setFont(new java.awt.Font("Tahoma", 1, 100)); // NOI18N
         pos21.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        pos21.setToolTipText("");
+        pos21.setToolTipText("3:2");
         pos21.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pos21MouseClicked(evt);
@@ -148,7 +148,7 @@ public class PlayField extends javax.swing.JFrame {
         pos22.setEditable(false);
         pos22.setFont(new java.awt.Font("Tahoma", 1, 100)); // NOI18N
         pos22.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        pos22.setToolTipText("");
+        pos22.setToolTipText("3:3");
         pos22.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pos22MouseClicked(evt);
@@ -230,7 +230,7 @@ public class PlayField extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(clearButton)
                     .addComponent(closeButton))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -284,7 +284,7 @@ public class PlayField extends javax.swing.JFrame {
                    isCross = false;
                    break;
                default: 
-                   info.setText("Невозможно соверишть такой ход!");
+                   info.setText("Невозможно совершить такой ход!");
                    break;
            }           
         } else {
@@ -321,7 +321,7 @@ public class PlayField extends javax.swing.JFrame {
                    isCross = false;
                    break;
                default: 
-                   info.setText("Невозможно соверишть такой ход!");
+                   info.setText("Невозможно совершить такой ход!");
                    break;
            }         
         } else {
@@ -358,7 +358,7 @@ public class PlayField extends javax.swing.JFrame {
                    isCross = false;
                    break;
                default: 
-                   info.setText("Невозможно соверишть такой ход!");
+                   info.setText("Невозможно совершить такой ход!");
                    break;
            }
         } else {
@@ -395,7 +395,7 @@ public class PlayField extends javax.swing.JFrame {
                    isCross = false;
                    break;
                default: 
-                   info.setText("Невозможно соверишть такой ход!");
+                   info.setText("Невозможно совершить такой ход!");
                    break;
            }          
         } else {
@@ -432,7 +432,7 @@ public class PlayField extends javax.swing.JFrame {
                    isCross = false;
                    break;
                default: 
-                   info.setText("Невозможно соверишть такой ход!");
+                   info.setText("Невозможно совершить такой ход!");
                    break;
            }          
         } else {
@@ -469,7 +469,7 @@ public class PlayField extends javax.swing.JFrame {
                    isCross = false;
                    break;
                default: 
-                   info.setText("Невозможно соверишть такой ход!");
+                   info.setText("Невозможно совершить такой ход!");
                    break;
            }
         } else {
@@ -506,7 +506,7 @@ public class PlayField extends javax.swing.JFrame {
                    isCross = false;
                    break;
                default: 
-                   info.setText("Невозможно соверишть такой ход!");
+                   info.setText("Невозможно совершить такой ход!");
                    break;
            }
         } else {
@@ -543,7 +543,7 @@ public class PlayField extends javax.swing.JFrame {
                    isCross = false;
                    break;
                default: 
-                   info.setText("Невозможно соверишть такой ход!");
+                   info.setText("Невозможно совершить такой ход!");
                    break;
            }
         } else {
