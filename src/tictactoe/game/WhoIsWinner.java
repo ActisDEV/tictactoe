@@ -29,9 +29,9 @@ package tictactoe.game;
  */
 public class WhoIsWinner {
     
-    int soWhoIsWinner;
+    static int soWhoIsWinner;
     
-    public int WinnerChecker() {
+    public static int WinnerChecker() {
            if ( //условия победы КРЕСТИКОВ
                ((PlayField.playField[0][0] == PlayField.playField[0][1]) && (PlayField.playField[0][0] == PlayField.playField[0][2]) && (PlayField.playField[0][0] == 1))//горизонтали
                    ||
