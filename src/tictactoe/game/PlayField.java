@@ -247,7 +247,7 @@ public class PlayField extends javax.swing.JFrame {
                    isCross = false;
                    break;
                default: 
-                   info.setText("Невозможно соверишть такой ход!");
+                   info.setText("Невозможно совершить такой ход!");
                    break;
            }
            
