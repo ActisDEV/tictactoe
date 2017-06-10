@@ -29,7 +29,7 @@ import java.awt.*;
  */
 public class PlayField extends javax.swing.JFrame {
 
-    int[][] playField; //игровое поле, восприяте компьютера
+    static int[][] playField; //игровое поле, восприяте компьютера
     boolean isCross = true; //крестики ходят первыми
     int i; //для очистки переменных
     MainMenu menu = new MainMenu();
