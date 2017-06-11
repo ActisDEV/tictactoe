@@ -21,15 +21,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package tictactoe.game;
+package game.ui;
 import java.awt.*;
+import game.mech.WhoIsWinner;
 /**
  *
  * @author Денис
  */
 public class PlayField extends javax.swing.JFrame {
 
-    static int[][] playField; //игровое поле, восприяте компьютера
+    public static int[][] playField; //игровое поле, восприяте компьютера
     boolean isCross = true; //крестики ходят первыми
     int i; //для очистки переменных
     MainMenu menu = new MainMenu();
